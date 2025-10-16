@@ -1,58 +1,58 @@
-package com.raghu.hello.entity;
+// package com.raghu.hello.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+// import jakarta.persistence.Entity;
+// import jakarta.persistence.GeneratedValue;
+// import jakarta.persistence.GenerationType;
+// import jakarta.persistence.Id;
+// import jakarta.persistence.JoinColumn;
+// import jakarta.persistence.JoinTable;
+// import jakarta.persistence.ManyToMany;
 
-@Entity
-public class Students {
+// @Entity
+// public class Students {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
+//     private String name;
 
-    @ManyToMany
-    @JoinTable(
-        name = "student_courses",
-        joinColumns = @JoinColumn(name = "student_id"),
-        inverseJoinColumns = @JoinColumn(name = "course_id")
-    )
-    private List<Course> courses = new ArrayList<>();
-    public Students() {}
-    public Students(String name) {
-        this.name = name;
-    }
+//     @ManyToMany
+//     @JoinTable(
+//         name = "student_courses",
+//         joinColumns = @JoinColumn(name = "student_id"),
+//         inverseJoinColumns = @JoinColumn(name = "course_id")
+//     )
+//     private List<Course> courses = new ArrayList<>();
+//     public Students() {}
+//     public Students(String name) {
+//         this.name = name;
+//     }
 
-    //Getters & Setters
-    public Long getId() {
-        return id;
-    }
+//     //Getters & Setters
+//     public Long getId() {
+//         return id;
+//     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//     public void setId(Long id) {
+//         this.id = id;
+//     }
 
-    public String getName() {
-        return name;
-    }
+//     public String getName() {
+//         return name;
+//     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//     public void setName(String name) {
+//         this.name = name;
+//     }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
+//     public List<Course> getCourses() {
+//         return courses;
+//     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-}
+//     public void setCourses(List<Course> courses) {
+//         this.courses = courses;
+//     }
+// }
