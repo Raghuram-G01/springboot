@@ -1,0 +1,273 @@
+/* Import Google Fonts - already linked in HTML, but good practice here too */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Base Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --dark-bg: #212529;
+    --light-text: #f8f9fa;
+    --dark-text: #343a40;
+    --light-bg: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Elegant gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-text);
+    text-align: center;
+    overflow: hidden; /* For background animations */
+}
+
+/* Optional: Subtle animated background elements */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+    z-index: 0;
+}
+.hero-section::before {
+    top: -50%;
+    left: -50%;
+}
+.hero-section::after {
+    bottom: -50%;
+    right: -50%;
+    animation-delay: -15s;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.content-wrapper {
+    position: relative; /* Bring content above pseudo-elements */
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Call to Action Buttons */
+.cta-buttons .btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 0 15px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn.primary:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Feature Section */
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 80px 40px;
+    background-color: var(--light-bg);
+    gap: 30px; /* Space between feature items */
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.7rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-up.delay-1 { animation-delay: 0.3s; }
+.fade-in-up.delay-2 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s; /* Base delay for features */
+}
+
+.fade-in.delay-05 { animation-delay: 0.7s; } /* 0.2s + 0.5s = 0.7s */
+.fade-in.delay-1 { animation-delay: 1.2s; }  /* 0.2s + 1s = 1.2s */
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons .btn {
+        display: block;
+        margin: 15px auto;
+    }
+
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+    }
+
+    .feature-item {
+        margin-bottom: 25px;
+        min-width: unset;
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .feature-item {
+        padding: 20px;
+    }
+}

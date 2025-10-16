@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Welcome</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="content-wrapper">
+            <h1 class="fade-in-up" th:text="${message}">Welcome to Spring Boot Application</h1>
+            <p class="fade-in-up delay-1">
+                Experience the elegance of a modern web application. Built with Spring Boot.
+            </p>
+            <div class="cta-buttons fade-in-up delay-2">
+                <a href="#" class="btn primary">Get Started</a>
+                <a href="#" class="btn secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="feature-item fade-in">
+            <i class="icon fas fa-cogs"></i>
+            <h3>Powerful Backend</h3>
+            <p>Leverage the robust capabilities of Spring Boot for your server-side needs.</p>
+        </div>
+        <div class="feature-item fade-in delay-05">
+            <i class="icon fas fa-desktop"></i>
+            <h3>Dynamic Frontend</h3>
+            <p>Deliver interactive and responsive user experiences with Thymeleaf.</p>
+        </div>
+        <div class="feature-item fade-in delay-1">
+            <i class="icon fas fa-shield-alt"></i>
+            <h3>Secure & Scalable</h3>
+            <p>Build applications that are both secure and ready to scale with your growth.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    </body>
+</html>
